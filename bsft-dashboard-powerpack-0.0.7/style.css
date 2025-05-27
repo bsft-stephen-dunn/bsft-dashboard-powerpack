@@ -1,0 +1,17 @@
+/* #features>li.active>a{
+    background:red;
+    } */
+
+/* .content {
+    background:green;
+} */
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color:#4875c8;
+    font-weight: bold;
+    /* text-decoration: underline; */
+    font-size: 16px;
+    border-color: #4875c8;
+    font-family: proxima-nova,sans-serif;
+    box-shadow: 2px 2px;
+}

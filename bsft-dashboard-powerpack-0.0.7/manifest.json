@@ -1,0 +1,59 @@
+{
+    "manifest_version": 2,
+    "name": "Blueshift Dashboard PowerPack",
+    "description": "Tools | Beta Features | Utilities",
+    "version": "1",
+    "icons": { 
+      "16": "img/bslogo.png",
+      "48": "img/bslogo.png",
+     "128": "img/bslogo.png" 
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://release3.getblueshift.com/*","https://app.getblueshift.com/*"],
+        "js": [
+          "js/jquery.3.3.1.min.js",
+          "js/popper.min.js",
+          "js/bootstrap.4.1.3.min.js",
+          "js/bootstrap-table.min.js",
+          "js/bootstrap-table-export.min.js",
+          "js/jspdf.min.js",
+          "js/jspdf.plugin.autotable.js",
+          "js/tableExport.min.js",
+          "js/angular.min.js",
+          "js/bootstrap4-toggle.min.js",
+          "js/jquery.canvasjs.min.js",
+          "js/async.min.js",
+          "js/jquery-form-serializer.js",
+          "common.js",
+          "routes/campaigns/index.js",
+          "routes/internaltools/index.js",
+          "routes/splitsegments/index.js",
+          "content.js"],
+        "css": [
+          "css/bootstrap.4.1.3.min.css",
+          "css/bootstrap-table.min.css",
+          "css/bootstrap4-toggle.min.css",
+          "style.css"
+        ],
+        "all_frames": true,
+        "run_at": "document_end"
+      }
+    ],
+    "web_accessible_resources": [
+      "script.js",
+      "common.js",
+      "routes/campaigns/index.html",
+      "routes/campaigns/index.js",
+      "routes/internaltools/index.html",
+      "routes/internaltools/index.js",
+      "routes/internaltools/rules.json",
+      "routes/splitsegments/index.html",
+      "routes/splitsegments/index.js"
+    ],
+    "permissions": [
+      "tabs",
+      "https://app.getblueshift.com/*",
+      "storage"
+    ]
+  }

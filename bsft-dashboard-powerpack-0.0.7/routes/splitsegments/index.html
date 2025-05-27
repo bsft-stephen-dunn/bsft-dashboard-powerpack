@@ -1,0 +1,95 @@
+<div id="pwp_splitsegments" style="margin-top: 25px;margin-left: 25px;margin-right: 25px;background: #fdfbfc;padding-left: 10px;padding-right: 10px;">
+    <div ui-view="" class="fader ng-scope">
+        <div class="IndexPage-title-bar ng-scope">
+            <div class="IndexPage-title">
+            Split Segments
+            </div>
+        </div> 
+        <form id="ajaxForm" style="padding: 5px;margin-top: 25px">
+            <div class="form-group">
+                <label for="sel1">Select list:</label>
+                <select class="form-control" id="sel_list">
+                    <option value="" selected disabled>Please select list</option>
+                </select>
+              </div>
+            <div class="">
+                <label for="splitAttribute">Split By Attribute(s)</label>
+                <div class="control-group" id="emails">
+                  <div class="controls">
+                    <div class="entry input-group form-group">
+                        <select class="form-control select-attributes" id="sel_attributes">
+                            <option value="" selected disabled>Please select split by attribute</option>
+                        </select>
+                      <span class="input-group-btn" style="margin-left: 2px;">
+                        <button class="btn btn-success btn-add" type="button">
+                          <span class="glyphicon glyphicon-plus"></span>
+                      </button>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <button id="submitSplitSegment" type="submit" class="btn btn-primary">Split Segments</button>
+        </form>
+        <div id="divtable" style="visibility: hidden">
+            <table id="tbl_splitsegments"
+            class="table-striped border-success"
+            data-click-to-select="true"
+            data-search="true"
+            data-toggle="table"
+        ">
+        <thead>
+        <tr>
+            <th data-field="name" data-sortable="true">
+            <span class="text-success">
+                Name
+            </span>
+            </th>
+            <th data-field="author">
+            <span class="text-success">
+                Author
+            </span>
+            </th>
+            <th data-field="updated_at">
+            <span class="text-success">
+                Last Refresh
+            </span>
+            </th>
+            <th data-field="refresh_status">
+            <span class="text-success">
+                Status
+            </span>
+            </th>
+            <th data-field="approxusers" data-sortable="true">
+            <span class="text-success">
+            Users
+            </span>
+            </th>
+            <th data-field="email_users" data-sortable="true">
+            <span class="text-success">
+                Emailable
+            </span>
+            </th>
+            <th data-field="push_users" data-sortable="true">
+            <span class="text-success">
+                Push Enabled
+            </span>
+            </th>
+            <th data-field="sms_users" data-sortable="true">
+                <span class="text-success">
+                SMS Enabled
+                </span>
+            </th>
+            <th data-field="in_app_users" data-sortable="true">
+                <span class="text-success">
+                In App Enabled
+                </span>
+            </th>
+
+        </tr>
+        </thead>
+            </table>
+        </div>
+    </div>
+    
+</div>

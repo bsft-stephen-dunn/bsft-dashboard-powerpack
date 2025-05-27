@@ -1,0 +1,234 @@
+<div id="pwp_internaltools" class="container-fluid">
+    <div class="IndexPage-title">
+      Internal Tools
+    </div>
+    <div style="padding: 5px;">
+
+    <ul class="nav nav-tabs nav-fill border-0" id="features" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active border border-bottom-0"  href="#accountconfig" role="tab" aria-controls="accountconfig" aria-selected="true">Account Config</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#enablefeatures" role="tab" aria-controls="enablefeatures" aria-selected="false">Enable Features</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#admin" role="tab" aria-controls="admin" aria-selected="false">Admin</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#deliverability" role="tab" aria-controls="deliverability" aria-selected="false">Deliverability</a>
+    </li>
+  </ul>
+  
+  <div class="tab-content mt-3" >
+    <div class="tab-pane active border" id="accountconfig" role="tabpanel" aria-labelledby="accountconfig-tab">
+        <ul class="nav nav-tabs nav-fill border-0" id="accountconfigsub" role="tablist">
+            <li class="nav-item">
+            <a class="nav-link active"  href="#eventrulelist" role="tab" aria-controls="eventrulelist" aria-selected="true">Event Rules</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#eventwhitelist" data="eventwhitelist" role="tab" aria-controls="eventwhitelist" aria-selected="false">Event Whitelist</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#schema" role="tab" aria-controls="schema" aria-selected="false">Schema</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#settings" role="tab" aria-controls="schema" aria-selected="false">Settings</a>
+            </li>
+        </ul>
+        <div class="tab-content mt-3" >
+            <div class="tab-pane active border" id="eventrulelist" role="tabpanel" aria-labelledby="eventrulelist-tab">
+              <table id="eventrulestbl"
+                class="table-striped border-success"
+                data-click-to-select="true"
+                data-search="true"
+                data-show-columns="true"
+                data-show-export="true"
+                data-toggle="table"
+               ">
+             <thead>
+               <tr>
+                 <th data-field="event_name" data-sortable="true">
+                   <span class="text-success">
+                     Event Name
+                   </span>
+                 </th>
+                 <th data-field="rule_name" data-sortable="true">
+                   <span class="text-success">
+                     Rule Name 
+                   </span>
+                 </th>
+                 <th data-field="rule">
+                   <span class="text-success">
+                     Rule
+                   </span>
+                 </th>
+                 <th data-field="transformation">
+                   <span class="text-success">
+                     Transformation
+                   </span>
+                 </th>
+                 <th data-field="action">
+                   <span class="text-success">
+                     Action
+                   </span>
+                 </th>
+                 <th data-field="priority" data-sortable="true">
+                   <span class="text-success">
+                   Priority
+                   </span>
+                 </th>
+                 <th data-field="active" data-sortable="true">
+                   <span class="text-success">
+                     Active
+                   </span>
+                 </th>
+                 <th data-field="updated_at" data-sortable="true">
+                   <span class="text-success">
+                     Last Upated At
+                   </span>
+                 </th>
+         
+               </tr>
+             </thead>
+              </table>
+            </div>
+            <div class="tab-pane border" id="eventwhitelist" role="tabpanel" aria-labelledby="eventwhitelist-tab">
+              <table id="eventwhitelistbl"
+                class="table-striped border-success"
+                data-click-to-select="true"
+                data-search="true"
+                data-show-columns="true"
+                data-show-export="true"
+                data-toggle="table"
+               ">
+             <thead>
+               <tr>
+                 <th data-field="event_name" data-sortable="true">
+                   <span class="text-success">
+                     Event Name
+                   </span>
+                 </th>
+                 <th data-field="user_attributes_whitelist" data-sortable="true">
+                   <span class="text-success">
+                     WhiteListed User Attributes
+                   </span>
+                 </th> 
+               </tr>
+             </thead>
+              </table>
+            </div>
+            <div class="tab-pane border" id="schema" role="tabpanel" aria-labelledby="schema-tab">
+              <table id="schematbl"
+      class="table-striped border-success"
+      data-click-to-select="true"
+      data-search="true"
+      data-show-columns="true"
+      data-show-export="true"
+      data-toggle="table"
+     ">
+   <thead>
+     <tr>
+       <th data-field="type" data-sortable="true">
+         <span class="text-success">
+           Schema Type
+         </span>
+       </th>
+       <th data-field="name" data-sortable="true">
+         <span class="text-success">
+           Schema Name
+         </span>
+       </th>
+       <th data-field="attributeName" data-sortable="true">
+         <span class="text-success">
+           Attribute Name
+         </span>
+       </th>
+       <th data-field="attributeDatatype" data-sortable="true">
+         <span class="text-success">
+           Attribute Datatype
+         </span>
+       </th>
+
+     </tr>
+   </thead>
+              </table>   
+            </div>
+            <div class="tab-pane border" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+              <table id="accounttbl"
+              class="table-striped border-success"
+              data-click-to-select="true"
+              data-search="true"
+              data-show-columns="true"
+              data-show-export="true"
+              data-toggle="table"
+             ">
+           <thead>
+             <tr>
+               <th data-field="key" data-sortable="true">
+                 <span class="text-success">
+                   Property
+                 </span>
+               </th>
+               <th data-field="value" data-sortable="true">
+                 <span class="text-success">
+                   Value
+                 </span>
+               </th>
+             </tr>
+           </thead>
+            </table>   
+            </div>
+        </div>
+
+
+  
+    </div>
+    <div class="tab-pane tab-pane-tools" id="addeventrule" role="tabpanel" aria-labelledby="addeventrule-tab">
+    </div>
+    <div class="tab-pane tab-pane-tools" id="enablefeatures" role="tabpanel" aria-labelledby="enablefeatures-tab">
+      <br>
+      <form >
+        <div class="custom-control custom-switch form-group form-group-lg">
+          <input type="checkbox" class="custom-control-input" id="customSwitch1">
+          <label class="custom-control-label" for="customSwitch1">Enable OptIn Monster</label>
+        </div>
+        <div class="custom-control custom-switch form-group form-group-lg">
+          <input type="checkbox" class="custom-control-input" id="customSwitch2">
+          <label class="custom-control-label" for="customSwitch2">Enable Automatic Campaign Reports</label>
+        </div>
+      </form>
+    </div>
+    <div class="tab-pane tab-pane-tools" id="admin" role="tabpanel" aria-labelledby="admin-tab">
+      <br>
+      <h1>Enable Webhook Notifications</h1>
+      <input class="form-control" id="inputEmail4" placeholder="Webhook url">
+      <br>
+      <form >
+        <div class="custom-control custom-switch form-group form-group-lg">
+          <input type="checkbox" class="custom-control-input" id="customSwitch4">
+          <label class="custom-control-label" for="customSwitch4">Customer Create</label>
+        </div>
+        <div class="custom-control custom-switch form-group form-group-lg">
+          <input type="checkbox" class="custom-control-input" id="customSwitch5">
+          <label class="custom-control-label" for="customSwitch5">Customer Update</label>
+        </div>
+        <div class="custom-control custom-switch form-group form-group-lg">
+          <input type="checkbox" class="custom-control-input" id="customSwitch6">
+          <label class="custom-control-label" for="customSwitch6">Campaign Trigger</label>
+        </div>
+        <div class="custom-control custom-switch form-group form-group-lg">
+          <input type="checkbox" class="custom-control-input" id="customSwitch7">
+          <label class="custom-control-label" for="customSwitch7">Campaign Finish</label>
+        </div>
+      </form>
+      <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+    <div class="tab-pane tab-pane-tools" id="deliverability" role="tabpanel" aria-labelledby="deliverability-tab">
+      <div style="position:relative;padding-top:56.25%;">
+        <iframe src="https://retool.getblueshift.com/apps/decs/Deliverability%20Dashboard%20Athena" frameborder="0" allowfullscreen
+          style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+      </div>
+    </div>
+  </div>
+   </div>       
+  </div>

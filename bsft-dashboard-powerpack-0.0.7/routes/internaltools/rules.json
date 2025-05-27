@@ -1,0 +1,1584 @@
+[
+    {
+        "event_name": null,
+        "rule_name": "discoveryplus.ph_copy_videoId_product_id",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "videoId",
+                    "type": "present"
+                },
+                {
+                    "field": "product_id",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "videoId",
+            "type": "copy",
+            "target": "product_id"
+        },
+        "action": null,
+        "priority": 120,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:17.000Z"
+    },
+    {
+        "event_name": null,
+        "rule_name": "discoveryplus.ph_copy_contentId_product_id",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "contentId",
+                    "type": "present"
+                },
+                {
+                    "field": "videoId",
+                    "type": "absent"
+                },
+                {
+                    "field": "product_id",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "contentId",
+            "type": "copy",
+            "target": "product_id"
+        },
+        "action": null,
+        "priority": 220,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:17.000Z"
+    },
+    {
+        "event_name": "announcement - email submission",
+        "rule_name": "discoveryplus.ph_add_announcement_emailsubmission",
+        "rule": {
+            "field": "event",
+            "type": "present"
+        },
+        "transformation": {
+            "type": "add",
+            "target": "announcement_emailsubmission",
+            "value": "true",
+            "target_type": "boolean"
+        },
+        "action": null,
+        "priority": 120,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:17.000Z"
+    },
+    {
+        "event_name": null,
+        "rule_name": "discoveryplus.ph_map_device_id",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "device_id",
+                    "type": "present"
+                },
+                {
+                    "field": "app_name",
+                    "type": "present"
+                },
+                {
+                    "field": "os_name",
+                    "type": "substring",
+                    "value": "iOS"
+                },
+                {
+                    "field": "_bsft_source",
+                    "type": "equal",
+                    "value": "mparticle"
+                }
+            ]
+        },
+        "transformation": {
+            "type": "join",
+            "fields": [
+                "device_id",
+                "app_name"
+            ],
+            "target": "device_id",
+            "delimiter": ":"
+        },
+        "action": null,
+        "priority": 210,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:17.000Z"
+    },
+    {
+        "event_name": null,
+        "rule_name": "discoveryplus.ph_copy_sonicId_group_id",
+        "rule": {
+            "field": "sonicId",
+            "type": "present"
+        },
+        "transformation": {
+            "field": "sonicId",
+            "type": "copy",
+            "target": "group_id",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 120,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:17.000Z"
+    },
+    {
+        "event_name": "account - register",
+        "rule_name": "discoveryplus.ph_add_is_primary_profile",
+        "rule": {
+            "field": "event",
+            "type": "equal",
+            "value": "account - register"
+        },
+        "transformation": {
+            "type": "add",
+            "target": "is_primary_profile",
+            "value": "true",
+            "target_type": "boolean"
+        },
+        "action": null,
+        "priority": 120,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:17.000Z"
+    },
+    {
+        "event_name": null,
+        "rule_name": "discoveryplus.ph_copy_other_id_2",
+        "rule": {
+            "field": "other2",
+            "type": "present"
+        },
+        "transformation": {
+            "field": "other2",
+            "type": "copy",
+            "target": "other_id_2",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 120,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:17.000Z"
+    },
+    {
+        "event_name": null,
+        "rule_name": "discoveryplus.ph_copy_other_id_3",
+        "rule": {
+            "field": "other3",
+            "type": "present"
+        },
+        "transformation": {
+            "field": "other3",
+            "type": "copy",
+            "target": "other_id_3",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 120,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:17.000Z"
+    },
+    {
+        "event_name": null,
+        "rule_name": "discoveryplus.ph_copy_other_id_4",
+        "rule": {
+            "field": "other4",
+            "type": "present"
+        },
+        "transformation": {
+            "field": "other4",
+            "type": "copy",
+            "target": "other_id_4",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 120,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:17.000Z"
+    },
+    {
+        "event_name": null,
+        "rule_name": "discoveryplus.ph_copy_other_id_5",
+        "rule": {
+            "field": "other5",
+            "type": "present"
+        },
+        "transformation": {
+            "field": "other5",
+            "type": "copy",
+            "target": "other_id_5",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 120,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:17.000Z"
+    },
+    {
+        "event_name": null,
+        "rule_name": "discoveryplus.ph_copy_other_id_6",
+        "rule": {
+            "field": "other6",
+            "type": "present"
+        },
+        "transformation": {
+            "field": "other6",
+            "type": "copy",
+            "target": "other_id_6",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 120,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:17.000Z"
+    },
+    {
+        "event_name": "s2ssubscription - subscriptioncreated",
+        "rule_name": "discoveryplus.ph_copy_status_s2ssubscription - subscriptioncreated",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "status",
+                    "type": "present"
+                },
+                {
+                    "field": "subscriptionStatus",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "status",
+            "type": "copy",
+            "target": "subscriptionStatus",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:17.000Z"
+    },
+    {
+        "event_name": "s2sSubscription - subscriptionCreated",
+        "rule_name": "discoveryplus.ph_copy_status_s2sSubscription - subscriptionCreated",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "status",
+                    "type": "present"
+                },
+                {
+                    "field": "subscriptionStatus",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "status",
+            "type": "copy",
+            "target": "subscriptionStatus",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:17.000Z"
+    },
+    {
+        "event_name": "s2ssubscription - subscriptionactivated",
+        "rule_name": "discoveryplus.ph_copy_status_s2ssubscription - subscriptionactivated",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "status",
+                    "type": "present"
+                },
+                {
+                    "field": "subscriptionStatus",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "status",
+            "type": "copy",
+            "target": "subscriptionStatus",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:17.000Z"
+    },
+    {
+        "event_name": "s2sSubscription - subscriptionActivated",
+        "rule_name": "discoveryplus.ph_copy_status_s2sSubscription - subscriptionActivated",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "status",
+                    "type": "present"
+                },
+                {
+                    "field": "subscriptionStatus",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "status",
+            "type": "copy",
+            "target": "subscriptionStatus",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:17.000Z"
+    },
+    {
+        "event_name": "s2ssubscription - subscriptioncancelled",
+        "rule_name": "discoveryplus.ph_copy_status_s2ssubscription - subscriptioncancelled",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "status",
+                    "type": "present"
+                },
+                {
+                    "field": "subscriptionStatus",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "status",
+            "type": "copy",
+            "target": "subscriptionStatus",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:17.000Z"
+    },
+    {
+        "event_name": "s2sSubscription - subscriptionCancelled",
+        "rule_name": "discoveryplus.ph_copy_status_s2sSubscription - subscriptionCancelled",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "status",
+                    "type": "present"
+                },
+                {
+                    "field": "subscriptionStatus",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "status",
+            "type": "copy",
+            "target": "subscriptionStatus",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:17.000Z"
+    },
+    {
+        "event_name": "s2ssubscription - subscriptionterminated",
+        "rule_name": "discoveryplus.ph_copy_status_s2ssubscription - subscriptionterminated",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "status",
+                    "type": "present"
+                },
+                {
+                    "field": "subscriptionStatus",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "status",
+            "type": "copy",
+            "target": "subscriptionStatus",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:17.000Z"
+    },
+    {
+        "event_name": "s2sSubscription - subscriptionTerminated",
+        "rule_name": "discoveryplus.ph_copy_status_s2sSubscription - subscriptionTerminated",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "status",
+                    "type": "present"
+                },
+                {
+                    "field": "subscriptionStatus",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "status",
+            "type": "copy",
+            "target": "subscriptionStatus",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:17.000Z"
+    },
+    {
+        "event_name": "s2ssubscription - subscriptionupgraded",
+        "rule_name": "discoveryplus.ph_copy_status_s2ssubscription - subscriptionupgraded",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "status",
+                    "type": "present"
+                },
+                {
+                    "field": "subscriptionStatus",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "status",
+            "type": "copy",
+            "target": "subscriptionStatus",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:17.000Z"
+    },
+    {
+        "event_name": "s2sSubscription - subscriptionUpgraded",
+        "rule_name": "discoveryplus.ph_copy_status_s2sSubscription - subscriptionUpgraded",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "status",
+                    "type": "present"
+                },
+                {
+                    "field": "subscriptionStatus",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "status",
+            "type": "copy",
+            "target": "subscriptionStatus",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:17.000Z"
+    },
+    {
+        "event_name": "s2ssubscription - subscriptiondowngraded",
+        "rule_name": "discoveryplus.ph_copy_status_s2ssubscription - subscriptiondowngraded",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "status",
+                    "type": "present"
+                },
+                {
+                    "field": "subscriptionStatus",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "status",
+            "type": "copy",
+            "target": "subscriptionStatus",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "s2sSubscription - subscriptionDowngraded",
+        "rule_name": "discoveryplus.ph_copy_status_s2sSubscription - subscriptionDowngraded",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "status",
+                    "type": "present"
+                },
+                {
+                    "field": "subscriptionStatus",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "status",
+            "type": "copy",
+            "target": "subscriptionStatus",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "s2ssubscription - subscriptionconvertedtopreactive",
+        "rule_name": "discoveryplus.ph_copy_status_s2ssubscription - subscriptionconvertedtopreactive",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "status",
+                    "type": "present"
+                },
+                {
+                    "field": "subscriptionStatus",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "status",
+            "type": "copy",
+            "target": "subscriptionStatus",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "s2sSubscription - subscriptionConvertedToPreActive",
+        "rule_name": "discoveryplus.ph_copy_status_s2sSubscription - subscriptionConvertedToPreActive",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "status",
+                    "type": "present"
+                },
+                {
+                    "field": "subscriptionStatus",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "status",
+            "type": "copy",
+            "target": "subscriptionStatus",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "s2ssubscription - nonpayingperiodended",
+        "rule_name": "discoveryplus.ph_copy_status_s2ssubscription - nonpayingperiodended",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "status",
+                    "type": "present"
+                },
+                {
+                    "field": "subscriptionStatus",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "status",
+            "type": "copy",
+            "target": "subscriptionStatus",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "s2sSubscription - nonPayingPeriodEnded",
+        "rule_name": "discoveryplus.ph_copy_status_s2sSubscription - nonPayingPeriodEnded",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "status",
+                    "type": "present"
+                },
+                {
+                    "field": "subscriptionStatus",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "status",
+            "type": "copy",
+            "target": "subscriptionStatus",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "s2ssubscription - nonpayingperiodstarted",
+        "rule_name": "discoveryplus.ph_copy_status_s2ssubscription - nonpayingperiodstarted",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "status",
+                    "type": "present"
+                },
+                {
+                    "field": "subscriptionStatus",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "status",
+            "type": "copy",
+            "target": "subscriptionStatus",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "s2sSubscription - nonPayingPeriodStarted",
+        "rule_name": "discoveryplus.ph_copy_status_s2sSubscription - nonPayingPeriodStarted",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "status",
+                    "type": "present"
+                },
+                {
+                    "field": "subscriptionStatus",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "status",
+            "type": "copy",
+            "target": "subscriptionStatus",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "s2suser - userregistered",
+        "rule_name": "discoveryplus.ph_copy_event_s2suser - userregistered",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "event",
+                    "type": "present"
+                },
+                {
+                    "field": "s2s_user_registration_status",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "event",
+            "type": "copy",
+            "target": "s2s_user_registration_status",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "s2sUser - userRegistered",
+        "rule_name": "discoveryplus.ph_copy_event_s2sUser - userRegistered",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "event",
+                    "type": "present"
+                },
+                {
+                    "field": "s2s_user_registration_status",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "event",
+            "type": "copy",
+            "target": "s2s_user_registration_status",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "s2suser - userupdated",
+        "rule_name": "discoveryplus.ph_copy_event_s2suser - userupdated",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "event",
+                    "type": "present"
+                },
+                {
+                    "field": "s2s_user_registration_status",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "event",
+            "type": "copy",
+            "target": "s2s_user_registration_status",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "s2sUser - userUpdated",
+        "rule_name": "discoveryplus.ph_copy_event_s2sUser - userUpdated",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "event",
+                    "type": "present"
+                },
+                {
+                    "field": "s2s_user_registration_status",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "event",
+            "type": "copy",
+            "target": "s2s_user_registration_status",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "s2suser - userauthprovideradded",
+        "rule_name": "discoveryplus.ph_copy_event_s2suser - userauthprovideradded",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "event",
+                    "type": "present"
+                },
+                {
+                    "field": "s2s_user_registration_status",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "event",
+            "type": "copy",
+            "target": "s2s_user_registration_status",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "s2sUser - userAuthProviderAdded",
+        "rule_name": "discoveryplus.ph_copy_event_s2sUser - userAuthProviderAdded",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "event",
+                    "type": "present"
+                },
+                {
+                    "field": "s2s_user_registration_status",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "event",
+            "type": "copy",
+            "target": "s2s_user_registration_status",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "s2suser - userauthproviderremoved",
+        "rule_name": "discoveryplus.ph_copy_event_s2suser - userauthproviderremoved",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "event",
+                    "type": "present"
+                },
+                {
+                    "field": "s2s_user_registration_status",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "event",
+            "type": "copy",
+            "target": "s2s_user_registration_status",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "s2sUser - userAuthProviderRemoved",
+        "rule_name": "discoveryplus.ph_copy_event_s2sUser - userAuthProviderRemoved",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "event",
+                    "type": "present"
+                },
+                {
+                    "field": "s2s_user_registration_status",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "event",
+            "type": "copy",
+            "target": "s2s_user_registration_status",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "s2suser - userdeleted",
+        "rule_name": "discoveryplus.ph_copy_event_s2suser - userdeleted",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "event",
+                    "type": "present"
+                },
+                {
+                    "field": "s2s_user_registration_status",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "event",
+            "type": "copy",
+            "target": "s2s_user_registration_status",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "s2sUser - userDeleted",
+        "rule_name": "discoveryplus.ph_copy_event_s2sUser - userDeleted",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "event",
+                    "type": "present"
+                },
+                {
+                    "field": "s2s_user_registration_status",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "event",
+            "type": "copy",
+            "target": "s2s_user_registration_status",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "s2suser - devicelinkedtouser",
+        "rule_name": "discoveryplus.ph_copy_event_s2suser - devicelinkedtouser",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "event",
+                    "type": "present"
+                },
+                {
+                    "field": "s2s_user_registration_status",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "event",
+            "type": "copy",
+            "target": "s2s_user_registration_status",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "s2sUser - deviceLinkedToUser",
+        "rule_name": "discoveryplus.ph_copy_event_s2sUser - deviceLinkedToUser",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "event",
+                    "type": "present"
+                },
+                {
+                    "field": "s2s_user_registration_status",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "event",
+            "type": "copy",
+            "target": "s2s_user_registration_status",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 150,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": null,
+        "rule_name": "discoveryplus.ph_delete_cookie",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "cookie",
+                    "type": "present"
+                },
+                {
+                    "field": "customer_id",
+                    "type": "present"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "cookie",
+            "type": "delete"
+        },
+        "action": null,
+        "priority": 420,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": null,
+        "rule_name": "discoveryplus.ph_map_device_idlower",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "device_id",
+                    "type": "present"
+                },
+                {
+                    "field": "app_name",
+                    "type": "present"
+                },
+                {
+                    "field": "os_name",
+                    "type": "substring",
+                    "value": "ios"
+                },
+                {
+                    "field": "_bsft_source",
+                    "type": "equal",
+                    "value": "mparticle"
+                }
+            ]
+        },
+        "transformation": {
+            "type": "join",
+            "fields": [
+                "device_id",
+                "app_name"
+            ],
+            "target": "device_id",
+            "delimiter": ":"
+        },
+        "action": null,
+        "priority": 210,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": null,
+        "rule_name": "discoveryplus.ph_copy_float_contentDuration",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "contentDuration",
+                    "type": "present"
+                },
+                {
+                    "field": "contentDuration_float",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "contentDuration",
+            "type": "copy",
+            "target": "contentDuration_float",
+            "target_type": "double"
+        },
+        "action": null,
+        "priority": 350,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": null,
+        "rule_name": "discoveryplus.ph_copy_float_contentPosition",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "contentPosition",
+                    "type": "present"
+                },
+                {
+                    "field": "contentPosition_float",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "contentPosition",
+            "type": "copy",
+            "target": "contentPosition_float",
+            "target_type": "double"
+        },
+        "action": null,
+        "priority": 350,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": null,
+        "rule_name": "discoveryplus.ph_copy_float_videoCompletionPercentage",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "videoCompletionPercentage",
+                    "type": "present"
+                },
+                {
+                    "field": "videoCompletionPercentage_float",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "videoCompletionPercentage",
+            "type": "copy",
+            "target": "videoCompletionPercentage_float",
+            "target_type": "double"
+        },
+        "action": null,
+        "priority": 350,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": null,
+        "rule_name": "discoveryplus.ph_copy_float_streamPosition",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "streamPosition",
+                    "type": "present"
+                },
+                {
+                    "field": "streamPosition_float",
+                    "type": "absent"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "streamPosition",
+            "type": "copy",
+            "target": "streamPosition_float",
+            "target_type": "double"
+        },
+        "action": null,
+        "priority": 350,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": null,
+        "rule_name": "discoveryplus.ph_downcase_event",
+        "rule": {
+            "type": "starts_with",
+            "field": "event",
+            "value": "s2s"
+        },
+        "transformation": {
+            "type": "downcase",
+            "field": "event",
+            "target": "event"
+        },
+        "action": null,
+        "priority": 20,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "app_open",
+        "rule_name": "discoveryplus.ph_delete_non_andriod",
+        "rule": {
+            "type": "not",
+            "value": {
+                "field": "device_type",
+                "type": "substring",
+                "value": "android"
+            }
+        },
+        "transformation": null,
+        "action": {
+            "type": "drop"
+        },
+        "priority": 220,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "app_open",
+        "rule_name": "discoveryplus.ph_drop_non_addroid_app_open",
+        "rule": {
+            "type": "not",
+            "value": {
+                "field": "device_type",
+                "type": "equal",
+                "value": "android"
+            }
+        },
+        "transformation": null,
+        "action": {
+            "type": "drop"
+        },
+        "priority": 110,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": null,
+        "rule_name": "discoveryplus.ph_delete_customer_id",
+        "rule": {
+            "field": "device_id",
+            "type": "equal",
+            "value": "d5d8630a-74ce-421b-88a5-aca87c25b294:dplus_us"
+        },
+        "transformation": {
+            "field": "device_id",
+            "type": "delete"
+        },
+        "action": null,
+        "priority": 410,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "s2ssubscription - subscriptionactivated",
+        "rule_name": "discoveryplus.ph_pricePlan",
+        "rule": {
+            "field": "pricePlanPrice",
+            "type": "present"
+        },
+        "transformation": {
+            "field": "pricePlanPrice",
+            "type": "copy",
+            "target": "pricePlanPriceValue",
+            "target_type": "double"
+        },
+        "action": null,
+        "priority": 410,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "s2ssubscription - subscriptioncancelled",
+        "rule_name": "discoveryplus.ph_set_subscriptioncancelled_triggered_at",
+        "rule": {
+            "field": "timestamp",
+            "type": "present"
+        },
+        "transformation": {
+            "type": "copy",
+            "field": "timestamp",
+            "target": "subscriptioncancelled_triggered_at"
+        },
+        "action": null,
+        "priority": 420,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "s2ssubscription - nonpayingperiodstarted",
+        "rule_name": "discoveryplus.ph_copy_timestamp_to_nonpayingperiodstarted_triggered_at",
+        "rule": {
+            "field": "timestamp",
+            "type": "present"
+        },
+        "transformation": {
+            "field": "timestamp",
+            "type": "copy",
+            "target": "nonpayingperiodstarted_triggered_at"
+        },
+        "action": null,
+        "priority": 300,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "s2ssubscription - subscriptionterminated",
+        "rule_name": "discoveryplus.ph_copy_timestamp_to_subscriptionterminated_triggered_at",
+        "rule": {
+            "field": "timestamp",
+            "type": "present"
+        },
+        "transformation": {
+            "field": "timestamp",
+            "type": "copy",
+            "target": "subscriptionterminated_triggered_at"
+        },
+        "action": null,
+        "priority": 300,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "s2ssubscription - nonpayingperiodended",
+        "rule_name": "discoveryplus.ph_copy_timestamp_to_nonpayingperiodended_triggered_at",
+        "rule": {
+            "field": "timestamp",
+            "type": "present"
+        },
+        "transformation": {
+            "field": "timestamp",
+            "type": "copy",
+            "target": "nonpayingperiodended_triggered_at"
+        },
+        "action": null,
+        "priority": 300,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "s2suser - userauthproviderremoved",
+        "rule_name": "discoveryplus.ph_copy_timestamp_to_userauthproviderremovedTimestamp",
+        "rule": {
+            "field": "timestamp",
+            "type": "present"
+        },
+        "transformation": {
+            "field": "timestamp",
+            "type": "copy",
+            "target": "userauthproviderremovedTimestamp"
+        },
+        "action": null,
+        "priority": 310,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "playback - stop",
+        "rule_name": "discoveryplus.ph_video_90_pct_complete",
+        "rule": {
+            "type": ">=",
+            "field": "videoCompletionPercentage_float",
+            "value": 90
+        },
+        "transformation": {
+            "type": "add",
+            "target": "event",
+            "value": "episode-complete"
+        },
+        "action": null,
+        "priority": 100,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "csvsubscription - subscriptionupdate",
+        "rule_name": "discoveryplus.ph_status_present_and_subscriptionStatus_absent",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "type": "present",
+                    "field": "status"
+                },
+                {
+                    "type": "absent",
+                    "field": "subscriptionStatus"
+                }
+            ]
+        },
+        "transformation": {
+            "field": "status",
+            "type": "copy",
+            "target": "subscriptionStatus",
+            "target_type": "string"
+        },
+        "action": null,
+        "priority": 100,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": "csvsubscription - subscriptionupdate",
+        "rule_name": "discoveryplus.ph_pricePlan_copy",
+        "rule": {
+            "field": "pricePlanPrice",
+            "type": "present"
+        },
+        "transformation": {
+            "field": "pricePlanPrice",
+            "type": "copy",
+            "target": "pricePlanPriceValue",
+            "target_type": "double"
+        },
+        "action": null,
+        "priority": 430,
+        "active": true,
+        "updated_at": "2021-08-17T19:27:18.000Z"
+    },
+    {
+        "event_name": null,
+        "rule_name": "discoveryplus.ph_map_customer_id",
+        "rule": {
+            "type": "and",
+            "value": [
+                {
+                    "field": "group_id",
+                    "type": "present"
+                },
+                {
+                    "field": "profileId",
+                    "type": "present"
+                }
+            ]
+        },
+        "transformation": {
+            "type": "join",
+            "fields": [
+                "group_id",
+                "profileId"
+            ],
+            "target": "customer_id",
+            "delimiter": ""
+        },
+        "action": null,
+        "priority": 210,
+        "active": true,
+        "updated_at": "2021-08-22T00:08:24.000Z"
+    },
+    {
+        "event_name": "s2slegal - consentcreated",
+        "rule_name": "discoveryplus.ph_newsletter-preference_true",
+        "rule": {
+            "type": "equal",
+            "field": "consent_option_newsletter-preference",
+            "value": "true"
+        },
+        "transformation": {
+            "type": "add",
+            "value": "false",
+            "target": "unsubscribed"
+        },
+        "action": null,
+        "priority": 300,
+        "active": false,
+        "updated_at": "2021-10-11T18:13:34.000Z"
+    },
+    {
+        "event_name": "s2slegal - consentcreated",
+        "rule_name": "discoveryplus.ph_newsletter-preference_false",
+        "rule": {
+            "type": "equal",
+            "field": "consent_option_newsletter-preference",
+            "value": "false"
+        },
+        "transformation": {
+            "type": "add",
+            "value": "true",
+            "target": "unsubscribed"
+        },
+        "action": null,
+        "priority": 310,
+        "active": false,
+        "updated_at": "2021-10-11T18:13:55.000Z"
+    },
+    {
+        "event_name": "s2suser - userregistered",
+        "rule_name": "discoveryplus.ph_set_default_profile",
+        "rule": {
+            "type": "present",
+            "field": "event"
+        },
+        "transformation": {
+            "type": "add",
+            "value": "true",
+            "target": "isDefaultProfile"
+        },
+        "action": null,
+        "priority": 300,
+        "active": true,
+        "updated_at": "2021-10-07T18:14:44.000Z"
+    },
+    {
+        "event_name": "s2slegal - consentcreated",
+        "rule_name": "discoveryplus.ph_consent_option_newsletter-preference_unsubscribe_sms",
+        "rule": {
+            "type": "equal",
+            "field": "consent_option_newsletter-preference",
+            "value": "true"
+        },
+        "transformation": {
+            "type": "add",
+            "value": "false",
+            "target": "unsubscribe_sms"
+        },
+        "action": null,
+        "priority": 120,
+        "active": true,
+        "updated_at": "2021-10-11T15:44:33.000Z"
+    },
+    {
+        "event_name": "s2slegal - consentcreated",
+        "rule_name": "discoveryplus.ph_consent_option_newsletter-preference_unsubscribe_sms_false",
+        "rule": {
+            "type": "equal",
+            "field": "consent_option_newsletter-preference",
+            "value": "false"
+        },
+        "transformation": {
+            "type": "add",
+            "value": "true",
+            "target": "unsubscribe_sms"
+        },
+        "action": null,
+        "priority": 120,
+        "active": true,
+        "updated_at": "2021-10-11T15:44:46.000Z"
+    }
+]
